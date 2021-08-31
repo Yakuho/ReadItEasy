@@ -130,6 +130,8 @@ Inference finished cost 50.727ms
 ```
 
 </details>
+    
+**最后要注意的是，模型训练产生的classes.txt是与模型是配套的，它指定了模型的输出字符的位置！！！**
 
 </details>
 
