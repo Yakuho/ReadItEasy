@@ -137,7 +137,19 @@ Inference finished cost 50.727ms
 
 ## <div align="center">Experience</div>
 
-以下是经过不同字体文件训练的数据: 
+以下是经过不同字体文件训练的数据(GPU: GTX1050，CPU: CORE i5): 
+
+**RIE(ReadItEasy模型) KNN(K临近算法模型)**
+
+|数据集     |字符主要类型  |字符总数 |是否标准   |RIE准确率  |KNN准确率     |平均准确率  |RIE推理速度   |KNN推理速度  
+|---        |---           |---     |---        |---        |---           |---         |---          |---   
+|猫眼电影   |纯数字        |12       |❌        |100%       |90.9%         |---         |46ms         |4ms   
+|大众点评   |中文字符+数字 |603      |✅        |100%       |100%          |---         |             |140ms    
+
+
+欢迎在issue投稿更多不同的字体文件加入训练，有更多不同的字体更能增强模型的泛化能力，形成一个通用的字体坐标识别模型
+
+以上使用的数据集测试均可在[evaluate](https://github.com/Yakuho/ReadItEasy/tree/master/evaluete)目录下找到, 欢迎复现尝试
 
 ## <div align="center">More details</div>
 
