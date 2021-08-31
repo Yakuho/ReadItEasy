@@ -126,6 +126,6 @@ python train.py
 <details open>
 <summary>Tutorials</summary>
 
-- [详细介绍](https://github.com/Yakuho/ReadItEasy/docs/README.MD)
+- [详细介绍](https://github.com/Yakuho/ReadItEasy/tree/master/docs/README.MD)
 
 </details>
