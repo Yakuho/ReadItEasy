@@ -113,6 +113,22 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
 python train.py
 ```
 
+```shell script
+...
+{'unicode': 'uniE20A', 'char': '4', 'confidences': 0.99496007}
+{'unicode': 'uniE2A0', 'char': '7', 'confidences': 0.98925006}
+{'unicode': 'uniE3E1', 'char': '2', 'confidences': 0.9963917}
+{'unicode': 'uniEC2F', 'char': '6', 'confidences': 0.989242}
+{'unicode': 'uniECA9', 'char': '0', 'confidences': 0.99617445}
+{'unicode': 'uniEDB6', 'char': '3', 'confidences': 0.74377424}
+{'unicode': 'uniF11E', 'char': '8', 'confidences': 0.9967367}
+{'unicode': 'uniF439', 'char': '9', 'confidences': 0.99818087}
+{'unicode': 'uniF4E1', 'char': '1', 'confidences': 0.9952153}
+{'unicode': 'uniF636', 'char': '5', 'confidences': 0.9941585}
+{'unicode': 'x', 'char': '.', 'confidences': 0.9882712}
+Inference finished cost 50.727ms
+```
+
 </details>
 
 </details>
