@@ -49,4 +49,4 @@ class Terminal:
 
 if __name__ == '__main__':
     m = Terminal(classes_num=12, weights='./weights/MaoYan.h5', class_list='./datasets/labels/classes.txt')
-    m.predict(font_file='./evaluate/KS01.ttf')
+    m.predict(font_file='./evaluate/test.woff')
