@@ -1,4 +1,4 @@
-![resume](https://github.com/Yakuho/ReadItEasy/docs/resume.png)
+![resume](https://github.com/Yakuho/ReadItEasy/blob/master/docs/resume.png)
 
 <p>
 🚀 ReadItEasy 是一个关于识别字体文件的模型,它通过字体文件进行训练（如ttf、wpff格式）。通过训练模型拟合字体模型的曲线，最终发现模型是有效的。
@@ -61,9 +61,9 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
 <details>
 <summary>2. 工具使用</summary>
 
-- 使用[tools/exportxml.py](https://github.com/Yakuho/ReadItEasy/tools/exportxml.py)对字体文件进行格式转换，导出为XML格式
-- 使用[tools/exportmap.py](https://github.com/Yakuho/ReadItEasy/tools/exportmap.py)对字体文件进行编码
-- 使用[tools/exportlabel.py](https://github.com/Yakuho/ReadItEasy/tools/exportlabel.py)将字体文件转化为数据集，导出为npz格式
+- 使用[tools/exportxml.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/exportxml.py)对字体文件进行格式转换，导出为XML格式
+- 使用[tools/exportmap.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/exportmap.py)对字体文件进行编码
+- 使用[tools/exportlabel.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/exportlabel.py)将字体文件转化为数据集，导出为npz格式
 
 </details>
 
@@ -71,7 +71,7 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
 <summary>3. 数据集分割</summary>
 
 - 将上面导出的npz文件的目录下，把classes.txt妥善保存并移除目录
-- 使用[tools/splitdataset.py](https://github.com/Yakuho/ReadItEasy/tools/splitdataset.py)对数据集进行分割
+- 使用[tools/splitdataset.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/splitdataset.py)对数据集进行分割
 
 </details>
 
