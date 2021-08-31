@@ -1,0 +1,20 @@
+{
+  "compile": {
+    "optimizer": "optimizers.SGD",
+    "loss": "losses.CategoricalCrossentropy",
+    "metric": {
+      "metrics.Accuracy": {}
+    }
+  },
+  "hyper-parameter": {
+    "optimizer": {
+      "learning_rate": 1e-3,
+      "momentum": 0.5,
+      "nesterov": true
+    },
+    "loss": {
+      "from_logits": false,
+      "label_smoothing": 0
+    }
+  }
+}

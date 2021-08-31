@@ -1,0 +1,35 @@
+{
+  "name": "ReadItEasy",
+  "datasets": {
+    "class_list": "./datasets/labels/classes.txt",
+    "class_num": 602,
+    "epochs": 300,
+    "train": {
+      "path": "./datasets/labels/train",
+      "steps": 3010
+    },
+    "valid": {
+      "path": "./datasets/labels/valid",
+      "steps": 602,
+      "freq": 10
+    }
+  },
+  "model": {
+    "restore": false,
+    "checkpoint": "runs/train/experiences0/checkpoint",
+    "pre-training": false,
+    "weights": "weights/best.h5"
+  },
+  "save": {
+    "model_name": "last.h5",
+    "root_path": "experiences",
+    "ckpt_freq": 1
+  },
+  "callbacks": {
+    "callbacks.EarlyStopping": {
+      "monitor": "loss",
+      "min_delta": 0.001,
+      "patience": 10
+    }
+  }
+}

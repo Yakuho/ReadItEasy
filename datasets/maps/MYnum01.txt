@@ -1,0 +1,5 @@
+{
+"glyph00000": " ", "x": ".", "uniF45D": "1", "uniE529": "5", "uniEADC": "9", "uniE851": "3", 
+"uniEBFF": "4", "uniF275": "6", "uniE549": "2", "uniF7ED": "7", "uniF766": "8", "uniE8B4": "0", 
+
+}
