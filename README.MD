@@ -1,7 +1,7 @@
 <div align="center">
 <p>
 <a align="left" href="https://github.com/Yakuho/ReadItEasy" target="_blank">
-<img width="850" height="850" src="https://github.com/Yakuho/ReadItEasy/blob/master/docs/resume.png"></a>
+<img width="450" height="450" src="https://github.com/Yakuho/ReadItEasy/blob/master/docs/resume.png"></a>
 </p>
 </div>
 
