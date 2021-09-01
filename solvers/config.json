@@ -3,7 +3,7 @@
     "optimizer": "optimizers.SGD",
     "loss": "losses.CategoricalCrossentropy",
     "metric": {
-      "metrics.Accuracy": {}
+      "metrics.CategoricalAccuracy": {}
     }
   },
   "hyper-parameter": {
