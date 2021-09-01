@@ -29,6 +29,15 @@ if config['model']['restore']:
     model.load_weights(checkpoint)
 if config['model']['pre-training']:
     model.load_weights(config['model']['weights'])
+callback = [
+    callbacks.ModelCheckpoint(filepath=os.path.join(save_path, 'checkpoint'),
+                              save_weights_only=True,
+                              save_best_only=True,
+                              period=config['save']['ckpt_freq']),
+    callbacks.TensorBoard(log_dir=os.path.join(save_path, 'logs'), write_graph=True, write_images=False,
+                          update_freq='epoch', histogram_freq=1)
+]
+callback.extend([eval(callback)(**config['callbacks'][callback]) for callback in config['callbacks']])
 model.compile(
     optimizer=eval(solver['compile']['optimizer'])(**solver['hyper-parameter']['optimizer']),
     loss=eval(solver['compile']['loss'])(**solver['hyper-parameter']['loss']),
@@ -39,13 +48,6 @@ model.fit(
     validation_data=valid_data, validation_steps=config['datasets']['valid']['steps'],
     validation_freq=config['datasets']['valid']['freq'],
     epochs=config['datasets']['epochs'], verbose=1, workers=1, initial_epoch=0,
-    callbacks=[
-        callbacks.ModelCheckpoint(filepath=os.path.join(save_path, 'checkpoint'),
-                                  save_weights_only=True,
-                                  save_best_only=True,
-                                  period=config['save']['ckpt_freq']),
-        callbacks.TensorBoard(log_dir=os.path.join(save_path, 'logs'), write_graph=True, write_images=False,
-                              update_freq='epoch', histogram_freq=1)
-    ].extend([eval(callback)(**config['callbacks'][callback]) for callback in config['callbacks']])
+    callbacks=callback
 )
 model.save_weights(os.path.join(save_path, config['save']['model_name']))
