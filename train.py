@@ -25,9 +25,11 @@ save_path = makedir.init_dir('train', config['save']['root_path'])
 
 model = ReadItEasy(config['datasets']['class_num'])
 if config['model']['restore']:
+    model(numpy.ones((1, 3, 3)))
     checkpoint = latest_checkpoint(config['model']['checkpoint'])
     model.load_weights(checkpoint)
 if config['model']['pre-training']:
+    model(numpy.ones((1, 3, 3)))
     model.load_weights(config['model']['weights'])
 callback = [
     callbacks.ModelCheckpoint(filepath=os.path.join(save_path, 'checkpoint'),
