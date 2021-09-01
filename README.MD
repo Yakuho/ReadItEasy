@@ -1,4 +1,9 @@
-![resume](https://github.com/Yakuho/ReadItEasy/blob/master/docs/resume.png)
+<div align="center">
+<p>
+<a align="left" href="https://github.com/Yakuho/ReadItEasy" target="_blank">
+<img width="850" src="https://github.com/Yakuho/ReadItEasy/blob/master/docs/resume.png"></a>
+</p>
+</div>
 
 <p>
 🚀 ReadItEasy 是一个关于识别字体文件的模型,它通过字体文件进行训练（如ttf、wpff格式），在经过有限次试验中，发现试验中的模型是有效的。模型目的是为了将传入的字体文件可自动识别里面的所有字符。
