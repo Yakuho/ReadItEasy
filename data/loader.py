@@ -33,8 +33,10 @@ def class_list(path):
     :param path: txt path
     """
     with open(path, 'r', encoding='utf-8') as f:
-        classes = eval(f.read().strip())
-    return classes
+        context = f.read().split('\n')
+        train_steps, valid_steps, classes_num = context[0].split(' ')
+        classes_list = eval(context[1])
+    return train_steps, valid_steps, classes_num, classes_list
 
 
 def generator(path, classes):
