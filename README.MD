@@ -90,16 +90,17 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
 <details>
 <summary>5. 配置文件</summary>
 
-./config.json 保存模型的相关设置
+config.json 保存模型的相关设置
+solver/config.json 保存模型优化器, 损失函数等相关配置
 
-- 必填项
+- config.json必填项
 
     - datasets -> class_list: 分类标签清单的路径
     - datasets -> train -> path: 训练集目录
     - datasets -> valid -> path: 验证集目录
     - datasets -> valid -> epochs: 训练的轮次
 
-- 选填项
+- config.json选填项
     - model -> restore: 是否继续恢复训练
     - model -> checkpoint: 恢复训练的checkpoint文件路径
     - model -> pre-training: 是否使用预训练权重
@@ -107,8 +108,6 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
     - save -> model_name: 最后保存模型的名字
     - save -> root_path: 保存模型的路径名
     - save -> ckpt_freq: 检查点保存的频率(epoch为基准)
-
-./solver/config.json 保存模型优化器, 损失函数等相关配置
     
 </details>
 
