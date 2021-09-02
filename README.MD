@@ -44,8 +44,7 @@ $ pip install -r requirements.txt
 class Terminal:
     ...
 
-m = Terminal(classes_num=12,                            # 模型训练时设定的分类数
-             weights='./weights/MaoYan.h5',             # 模型的训练后权重路径
+m = Terminal(weights='./weights/MaoYan.h5',             # 模型的训练后权重路径
              class_list='./datasets/labels/classes.txt' # 模型输出后的字符转换清单路径
 )
 m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路径进行预测
