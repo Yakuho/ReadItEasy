@@ -155,7 +155,9 @@ Inference finished cost 50.727ms
 
 欢迎在issue投稿更多不同的字体文件加入训练，有更多不同的字体更能增强模型的泛化能力，形成一个通用的字体坐标识别模型
 
-以上使用的数据集测试均可在[evaluate](https://github.com/Yakuho/ReadItEasy/tree/master/evaluate)目录下找到, 欢迎复现尝试
+尝试训练该模型, 可供训练字体的数据集有 
+\[[Google Drive](https://drive.google.com/file/d/15JOaQDxylYArAaTlpSCucIZ4Md9tDmVW/view?usp=sharing)\]
+\[[百度网盘](https://pan.baidu.com/s/1jvBftOIQ2mJAupt68KO6Ug) 提取码: 0x80\]
 
 ## <div align="center">More details</div>
 
