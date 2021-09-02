@@ -12,7 +12,7 @@ font_type = ['xml']
 label_type = ['txt']
 
 
-def export(map_path, xml_path, save_path='', class_list_name='classes'):
+def export(map_path, xml_path, save_path=''):
     print('ReadItEasy 🚀 Label convert start...')
     xml_files = os.listdir(xml_path)
     map_files = os.listdir(map_path)
@@ -42,15 +42,11 @@ def export(map_path, xml_path, save_path='', class_list_name='classes'):
             save_path = os.path.join(xml_path, 'labels')
         if not os.path.exists(save_path):
             os.mkdir(save_path)
-        classes = list()
         t0 = time.time()
         for file in candidates:
             data = font.xml2info(os.path.join(xml_path, '%s.xml' % file), glyph.FontGlyph)
             maps = loader.maps(os.path.join(map_path, '%s.txt' % file))
-            classes.extend(list(maps.values()))
             numpy.savez(os.path.join(save_path, file), **{maps[key]: data[key] for key in data})
-        with open(os.path.join(save_path, '%s.txt' % class_list_name), 'w', encoding='utf-8') as f:
-            f.write(str(list(set(classes))))
         t1 = time.time()
         try:
             cost = found / (t1 - t0)
