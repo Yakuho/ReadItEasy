@@ -4,7 +4,7 @@
     "class_list": "./datasets/labels/classes.txt",
     "epochs": 300,
     "train": {
-      "path": "./datasets/labels/train",
+      "path": "./datasets/labels/train"
     },
     "valid": {
       "path": "./datasets/labels/valid",
