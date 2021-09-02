@@ -75,23 +75,27 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
 <details>
 <summary>3. 数据集分割</summary>
 
-- 将上面导出的npz文件的目录下，把classes.txt妥善保存并移除目录
-- 使用[tools/splitdataset.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/splitdataset.py)对数据集进行分割
+- 将上面导出的npz文件的路径复制
+- 使用[tools/splitdataset.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/splitdataset.py)对数据集进行分割 (注意: 如果数据集里面包含不同类型, 请手动分割)
 
 </details>
 
 <details>
-<summary>4. 配置文件</summary>
+<summary>4. 生成calsses.txt文件</summary>
+
+- 使用[tools/exportdatainfo.py](https://github.com/Yakuho/ReadItEasy/blob/master/tools/exportdatainfo.py)自动生成classes.txt文件
+    
+</details>
+    
+<details>
+<summary>5. 配置文件</summary>
 
 <details open>
 <summary>必填项</summary>
 
 - datasets -> class_list: 分类标签清单的路径
-- datasets -> class_num: 模型的分类数目
 - datasets -> train -> path: 训练集目录
 - datasets -> valid -> path: 验证集目录
-- datasets -> train -> steps: 训练集总共有多少个字 一般是文件数(N) * 每个文件里的字体数(M)
-- datasets -> valid -> steps: 验证集总共有多少个字 一般是文件数(N) * 每个文件里的字体数(M)
 - datasets -> valid -> epochs: 训练的轮次
 
 </details>
@@ -112,7 +116,7 @@ m.predict(font_file='./evaluate/KS01.ttf')              # 传入字体文件路�
 </details>
 
 <details>
-<summary>5. 训练</summary>
+<summary>6. 训练</summary>
 
 ```shell script
 python train.py
@@ -136,7 +140,9 @@ Inference finished cost 50.727ms
 
 </details>
     
-**最后要注意的是，模型训练产生的classes.txt是与模型是配套的，它指定了模型的输出字符的位置！！！**
+**最后要注意的是，classes.txt是与模型是配套的，它指定了模型的输出字符的位置！！！若classes.txt文件和当时训练的模型不一致, 会导致模型预测的位置不对**
+    
+**相当与A模型本来把“1”编码为0位置输入，classes.txt文件的0位置也必须是“1”**
 
 </details>
 
