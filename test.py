@@ -13,17 +13,17 @@ from nets import ReadItEasy
 
 
 class Terminal:
-    def __init__(self, classes_num, weights, class_list):
+    def __init__(self, weights, class_list):
         """
 
-        :param classes_num: classes num about model trained
         :param weights: model weights file path
         :param class_list: class list file path
         """
+        train_steps, valid_steps, classes_num, classes_list = loader.class_list(class_list)
+        self.class_list = class_list
         self.model = ReadItEasy.ReadItEasy(classes_num)
         self.model(numpy.zeros((1, 3, 3)))
         self.model.load_weights(weights)
-        self.class_list = loader.class_list(class_list)
         self.model.summary()
 
     def predict(self, font_file):
