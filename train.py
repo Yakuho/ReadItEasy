@@ -17,13 +17,13 @@ from tensorflow.python.training.checkpoint_management import latest_checkpoint
 
 config = loader.config('config.json')
 solver = loader.config('solvers/config.json')
-class_list = loader.class_list(config['datasets']['class_list'])
+train_steps, valid_steps, classes_num, class_list = loader.class_list(config['datasets']['class_list'])
 train_data = loader.generator(config['datasets']['train']['path'], class_list)
 valid_data = loader.generator(config['datasets']['valid']['path'], class_list)
 
 save_path = makedir.init_dir('train', config['save']['root_path'])
 
-model = ReadItEasy(config['datasets']['class_num'])
+model = ReadItEasy(classes_num)
 if config['model']['restore']:
     model(numpy.ones((1, 3, 3)))
     checkpoint = latest_checkpoint(config['model']['checkpoint'])
@@ -46,8 +46,8 @@ model.compile(
     metrics=[eval(metric)(**solver['compile']['metric'][metric]) for metric in solver['compile']['metric']]
 )
 model.fit(
-    train_data, steps_per_epoch=config['datasets']['train']['steps'],
-    validation_data=valid_data, validation_steps=config['datasets']['valid']['steps'],
+    train_data, steps_per_epoch=train_steps,
+    validation_data=valid_data, validation_steps=valid_steps,
     validation_freq=config['datasets']['valid']['freq'],
     epochs=config['datasets']['epochs'], verbose=1, workers=1, initial_epoch=0,
     callbacks=callback
