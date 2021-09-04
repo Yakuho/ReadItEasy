@@ -21,7 +21,7 @@ class FontGlyph:
         self.x_max = 0
         self.y_max = 0
 
-    def add(self, x, y, on):
+    def add(self, x, y, on, sort_key='x'):
         if x < self.x_min:
             self.x_min = x
         if y < self.y_min:
@@ -33,6 +33,15 @@ class FontGlyph:
         self.__xs = numpy.append(self.__xs, x)
         self.__ys = numpy.append(self.__ys, y)
         self.__on = numpy.append(self.__on, on - 0.5)
+        if sort_key == 'x':
+            sort_idx = numpy.argsort(self.__xs)
+        elif sort_key == 'y':
+            sort_idx = numpy.argsort(self.__ys)
+        else:
+            raise TypeError('not support sort key %s' % sort_key)
+        self.__xs = self.__xs[sort_idx]
+        self.__ys = self.__ys[sort_idx]
+        self.__on = self.__on[sort_idx]
 
     def update(self):
         # found xy middle point
